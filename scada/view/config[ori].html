@@ -1,0 +1,74 @@
+<div class="content bg-gray">
+	<div class="col-sm-12 title sd-inset">
+		<h2 class="">การตั้งค่าแจ้งเตือน</h2>
+	</div>
+	<div class="col-sm-4">
+		<table class="table config small">
+			<tr>
+				<th>ZONE A</th>
+				<th class="text-right">ฝน</th>
+				<th class="text-right">น้ำ</th>
+				<th></th>
+			</tr>
+			<tr ng-repeat="i in dataSTN | filter:filters.a">
+				<td>{{i.code+' '+i.name}}</td>
+				<td class="text-right text-nowrap"><span class="text-warning">{{i.rf1}}</span> | <span class="text-danger">{{i.rf2}}</span></td>
+				<td class="text-right text-nowrap"><span class="text-warning">{{i.wl1}}</span> | <span class="text-danger">{{i.wl2}}</span></td>
+				<td><button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#editBox"><i class="fa fa-cog"></i> ปรับ</button></td>
+			</tr>			
+		</table>
+	</div>
+	<div class="col-sm-4 bd-left">
+		<table class="table config small">
+			<tr>
+				<th>ZONE B</th>
+				<th class="text-right">ฝน</th>
+				<th class="text-right">น้ำ</th>
+				<th></th>
+			</tr>
+			<tr ng-repeat="i in dataSTN | filter:filters.b">
+				<td>{{i.code+' '+i.name}}</td>
+				<td class="text-right"><span class="text-warning">{{i.rf1}}</span> / <span class="text-danger">{{i.rf2}}</span></td>
+				<td class="text-right"><span class="text-warning">{{i.wl1}}</span> / <span class="text-danger">{{i.wl2}}</span></td>
+				<td><button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#editBox"><i class="fa fa-cog"></i> ปรับ</button></td>
+			</tr>			
+		</table>
+	</div>
+	<div class="col-sm-4 bd-left">
+		<table class="table config small">
+			<tr>
+				<th>ZONE C</th>
+				<th class="text-right">ฝน</th>
+				<th class="text-right">น้ำ</th>
+				<th></th>
+			</tr>
+			<tr ng-repeat="i in dataSTN | filter:filters.c">
+				<td>{{i.code+' '+i.name}}</td>
+				<td class="text-right"><span class="text-warning">{{i.rf1}}</span> / <span class="text-danger">{{i.rf2}}</span></td>
+				<td class="text-right"><span class="text-warning">{{i.wl1}}</span> / <span class="text-danger">{{i.wl2}}</span></td>
+				<td><button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#editBox"><i class="fa fa-cog"></i> ปรับ</button></td>
+			</tr>			
+		</table>
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="editBox" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <rzslider rz-slider-model="cfg.slider.minValue"
+          rz-slider-high="cfg.slider.maxValue"
+          rz-slider-options="cfg.slider.options"></rzslider>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+        <button type="button" class="btn btn-primary" ng-click="cfg.update()">บันทึก</button>
+      </div>
+    </div>
+  </div>
+</div>

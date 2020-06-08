@@ -1,0 +1,13 @@
+<link ng-href="{{path.plugin}}timer/style.css" rel="stylesheet"/>
+<div id="timer">
+	<i class="fa fa-clock-o"></i>
+	<span id="time">00:00:00</span>
+	<!-- <p>18 มีนาคม 2559</p> -->
+</div>
+<script>
+var myVar = setInterval(myTimer, 1000);
+function myTimer() {
+    var d = new Date();
+    document.getElementById("time").innerHTML = d.toLocaleTimeString('en-US', { hour12: false });
+}
+</script>

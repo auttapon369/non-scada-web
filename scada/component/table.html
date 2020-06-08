@@ -1,0 +1,28 @@
+<table class="table table-scroll">
+	<caption class="text-white">{{title}}</caption>
+	<thead class="bg-main-fade bd-fade sd">
+		<tr>
+			<th width="200" rowspan="2">สถานี</th>
+			<th width="150" rowspan="2" class="bd-left date">วันที่-เวลา</th>
+			<th class="bd-left">น้ำฝน</th>
+			<th colspan="2" class="bd-left">ระดับน้ำ</th>
+			<th class="bd-left">สถานะ</th>
+		</tr>
+		<tr>
+			<th class="bd-left">15 นาที</th>
+			<th class="bd-left">หน้า</th>
+			<th>ท้าย</th>
+			<th class="bd-left">ตู้</th>
+		</tr>
+	</thead>
+	<tbody class="sd">
+		<tr ng-repeat="s in dataREAL | filter:{zone:zone}">
+			<td width="200" class="text-left">{{tb.name(s.code)}}</td>
+			<td width="150" class="text-center bd-left date">{{s.date}}</td>
+			<td class="text-center bd-left">{{s.rf.value}}</td>
+			<td class="text-center bd-left">{{s.wl_up.value}}</td>
+			<td class="text-center">{{s.wl_down.value}}</td>
+			<td class="text-center bd-left"><i class="fa" ng-class="tb.door(s.door.status)"></i></td>
+		</tr>
+	</tbody>
+</table>

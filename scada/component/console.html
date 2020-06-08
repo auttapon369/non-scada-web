@@ -1,0 +1,54 @@
+
+	<div class="col-sm-3 cs-1">
+		<h6 class="text-fade">เมนู</h6>
+		<ul class="nav">
+			<li ng-class="{'active':isActive('/map')}">
+				<a href="#/map" class="btn btn-menu"><i class="fa fa-map-o"></i><span>หน้าแรก</span></a>
+			</li>
+			<li ng-class="{'active':isActive('/table')}">
+				<a href="#/table" class="btn btn-menu"><i class="fa fa-table"></i><span>ตาราง</span></a>
+			</li>			
+			<li ng-class="{'active':isActive('/trend')}">
+				<a href="#/trend" class="btn btn-menu"><i class="fa fa-bar-chart"></i><span>กราฟ</span></a>
+			</li>
+			<li ng-class="{'active':isActive('/cctv')}">
+				<a href="#/cctv" class="btn btn-menu"><i class="fa fa-photo"></i><span>cctv</span></a>
+			</li>
+			<li ng-class="{'active':isActive('/config')}">
+				<a href="#/config" class="btn btn-menu"><i class="fa fa-sliders"></i><span>เตือนภัย</span></a>
+			</li>
+			<!-- <li ng-class="{'active':isActive('/user')}">
+				<a href="#/user" class="btn btn-menu"><i class="fa fa-user"></i><span>ผู้ใช้งาน</span></a>
+			</li>
+			<li ng-class="{'active':isActive('/help')}">
+				<a href="#/help" class="btn btn-menu"><i class="fa fa-question"></i><span>ช่วยเหลือ</span></a>
+			</li> -->												
+		</ul>
+	</div>
+	<div class="col-sm-5 cs-2">
+		<h6 class="text-fade">การตรวจวัดข้อมูล</h6>
+		<div class="data-scroll" scroll-glue>
+			<table class="table table-c2">
+				<tr ng-repeat="m in messages">
+					<td>{{m.date}}</td>
+					<td>{{m.code+' '+m.name}}</td>
+					<td class="text-right">{{m.tag}}</td>
+					<td class="text-right">{{m.value}}</td>
+				</tr>
+			</table>
+		</div>
+		<div class="ref bd-fade text-fade">** ระดับน้ำ (ม.รทก.), ปริมาณฝน (มม.)</div>
+	</div>
+	<div class="col-sm-4 cs-3">
+		<h6 class="text-fade">การแจ้งเตือน</h6>
+		<div class="data-scroll" scroll-glue>
+			<table class="table table-c3">
+				<tr ng-repeat="e in events">
+					<td>{{e.date}}</td>
+					<td>{{e.name}}</td>
+					<td>{{e.detail}}</td>
+					<td class="text-right"><i class="fa fa-warning text-{{e.status}}"></i></td>
+				</tr>										
+			</table>
+		</div>
+	</div>	

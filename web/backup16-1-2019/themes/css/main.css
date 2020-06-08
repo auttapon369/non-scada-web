@@ -1,0 +1,377 @@
+/* ------------------------------------------------------------------ GLOBAL */
+html {
+	/*verflow-y: scroll;*/
+}
+body {
+	padding: 50px 0 0 !important;
+	/*min-width: 1280px;*/
+}
+a,a:hover {
+
+	cursor: pointer;
+	color: inherit;
+}
+h1 small {
+	display: block;
+	line-height: 2;
+	font-size: .5em;
+}
+h2 {
+	line-height: 3;
+	letter-spacing: 4px;
+}
+iframe {
+	width: 100%;
+	border: none;
+	/*border: 1px dashed gray;*/
+	/*overflow: hidden;*/
+}
+
+
+/* -------------------------------------------------------------------- FONT */
+.text-fade {
+	color: rgba(0,0,0,.5);
+}
+.text-white {
+	color: #fff;
+}
+.text-black {
+	color: #000;
+}
+.text-sub {
+	color: #82c1c0;
+}
+.text-main {
+	color: #01ffff;
+}
+
+
+/* ---------------------------------------------------------------------- BG */
+.bg-fade {
+	background-color: rgba(100,75,75,.05);
+}
+.bg-white {
+	background-color: #fff;
+}
+.bg-gray {
+	background-color: #333;
+}
+.bg-black {
+	background-color: #000;
+}
+.bg-sub {
+	background-color: #82c1c0;
+}
+.bg-main {
+	background-color: #00ffff;
+}
+
+
+/* ------------------------------------------------------------------ BORDER */
+hr,
+textarea,
+input,
+form .form-group,
+.bd-right,
+.bd-left,
+.bd-bottom,
+.bd-fade {
+	border-color: rgba(0,0,0,.2);
+}
+.bd-black {
+	border-color: #333;
+}
+.bd-sub {
+	border-color: #82c1c0 !important;
+}
+.bd-main {
+	border-color: #00ffff !important;
+}
+
+
+/* ------------------------------------------------------------------ SHADOW */
+.sd {
+	box-shadow: 0px 2px 3px rgba(0,0,0,.25);
+}
+.sd-inset {
+	box-shadow: 0px 2px 1px -1px rgba(0,0,0,.25) inset;
+}
+
+
+/* ------------------------------------------------------------------- TRANS */
+.trans {
+	transition: all .1s ease;
+}
+
+
+/* ------------------------------------------------------------------ BUTTON */
+.btn {
+/*	position: relative;
+	text-transform: uppercase;
+	text-indent: 2px;
+	letter-spacing: 2px;
+	border: none;*/
+}
+.btn:active {
+	/*top: 1px;*/
+}
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus {
+    outline: 0 none;
+}
+
+
+/* ------------------------------------------------------------------- RENEW */
+.ng-scope {
+	/*outline: 1px dotted red;*/
+}
+.container {
+	/*outline: 1px dashed red;*/
+}
+.container-fluid {
+	/*outline: 1px dashed red;*/
+}
+.row {
+	/*outline: 1px dotted red;*/
+	padding: 15px 0;
+}
+.navbar {
+	border: 0;
+}
+.navbar-brand > img {
+	position: relative;
+	top: -10px;
+	height: 60px;
+}
+.navbar-nav > li > a {
+	/*padding: 15px 30px;*/
+}
+.dropdown-menu {
+	max-height: 400px;
+	overflow-y: auto;
+	border-width: 1px 0 0;
+}
+.table > thead > tr > th {
+	text-align: center;
+	color: white;
+}
+.table > tbody > tr > td {
+	/*border-style: dotted solid;*/
+}
+.table-hover > tbody > tr:hover {
+	outline: 1px solid yellow;
+	background-color: rgba(255,255,0,.1)
+}
+
+
+/* --------------------------------------------------------------- ADD STYLE */
+.layout {
+	outline: 1px dashed red;
+}
+.h-min {
+	min-height: 800px;
+}
+.h-100 {
+	height: 100%;
+}
+.fixed {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.nopad-left {
+	padding-left: 0 !important;
+}
+.nopad-right {
+	padding-right: 0 !important;
+}
+.nomar {
+	margin: 0 !important;
+}
+.title {
+	padding: 30px 0 15px;
+	text-align: center;
+}
+.title h1 {
+	letter-spacing: 5px;
+}
+.title small {
+	letter-spacing: 2px;
+}
+.heading {
+	margin: 40px 0 20px;
+	text-indent: 0 !important;
+}
+.filter {
+	margin-bottom: 30px;
+	padding: 15px 0;
+	/*height: auto;
+	min-height: 150px;*/
+	border-width: 1px;
+	border-style: dotted;
+	border-radius: 5px;
+}
+.big p,
+.big span {
+	font-size: 1.5em;
+	color: black;
+}
+.big p span {
+	font-size: 1em;
+}
+.big li {
+	padding: 5px 0 10px;
+	vertical-align: middle;
+}
+.pre {
+	white-space: pre-line;
+}
+.br {
+	margin-bottom: 15px;
+}
+.dividend {
+	display: block;
+	margin-top: 10px;
+	padding-top: 10px;
+	border-top: 1px solid rgba(0,0,0,.1); 
+}
+
+.bd-top {
+	border-width: 1px 0 0 0;
+	border-style: solid; 
+}
+.bd-bottom {
+	border-bottom-width: 1px;
+	border-bottom-style: solid; 
+}
+.bd-left {
+	border-width: 0 0 0 1px;
+	border-style: solid; 
+}
+.bd-right {
+	border-right-width: 1px;
+	border-right-style: solid; 
+}
+.tab-control {
+	margin-top: 30px;
+	padding: 30px 0;
+}
+
+
+/* -------------------------------------------------------------------- IMG */
+.cctv {
+/*	outline: 1px dashed red;
+*/	position: absolute;
+	top: 0;
+	left: 0;
+/*	right: 0;
+	bottom: 0;*/
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+.photo {
+	margin-bottom: 30px;
+}
+.photo img {
+	margin-bottom: 5px;
+}
+.photo span {
+	display: block;
+	font-size: .75em;
+}
+.zoom {
+	position: relative;
+	overflow: hidden;
+}
+.zoom img {
+	-webkit-transition: all .4s ease;
+	transition: all .4s ease;
+}
+.zoom:hover img {
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+
+/* -------------------------------------------------------------------- MAP */
+.map {
+	/*outline: 1px dashed red;*/
+	position: relative;
+	min-height: 560px;
+}
+.popup {
+	/*outline: 1px dashed red;*/
+	width: 320px;
+}
+.popup > .list-unstyled > li {
+	padding-top: 10px;
+}
+.popup > .list-unstyled > li.line-break {
+	margin-top: 10px;
+	border-top: 1px dashed gray;
+}
+
+
+/* -------------------------------------------------------------------- FORM */
+form  {
+	/*height: 100%;*/
+}
+form label {
+	white-space: nowrap;
+}
+form .list-inline {
+	width: 100%;
+}
+form .list-inline li {
+	width: 25%;
+}
+form .form-group {
+	height: 100%;
+	border-left-width: 1px;
+	border-left-style: dashed;
+}
+form .form-group:first-child {
+	border-left: none;
+}
+form .radio {
+	/*outline: 1px dashed red;*/
+	margin: 0 0 10px;
+}
+
+/* ------------------------------------------------------------------ FOOTER */
+footer {
+	margin-top: 30px;
+	padding: 15px 0;
+	/*opacity: .5;*/
+	z-index: 9999;
+}
+
+
+/* -------------------------------------------------------------------- LOAD */
+.loader {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 5%;
+	background-color: rgba(0,0,0,.5);
+	display: none;
+}
+
+
+/* ------------------------------------------------------------------- MEDIA */
+@media (min-width: 1200px) {
+	.photo span {
+		font-size: 1em;
+	}
+	/*.filter {
+		height: 150px;
+	}*/
+}
+
+
+

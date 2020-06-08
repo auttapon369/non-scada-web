@@ -1,0 +1,45 @@
+<div class="container-fluid h-100">
+	
+	<form>
+
+	<div class="contain-in">
+		<table width="100%" class="table table-scroll">
+			<thead class="bg-main-fade bd-fade sd">
+				<tr> 
+					<th width="512" rowspan="2">สถานี</th>
+					<th class="bd-left" colspan="2">ปริมาณน้ำฝน</th>
+					<th class="bd-left" colspan="2">ระดับน้ำ</th>
+					<th class="bd-left" colspan="2">ระดับน้ำ (ท้าย)</th>
+				</tr>
+				<tr> 
+					<th width="128" class="bd-left text-warning">เฝ้าระวัง</th>
+					<th width="128" class="text-danger">วิกฤต</th>
+					<th width="128" class="bd-left text-warning">เฝ้าระวัง</th>
+					<th width="128" class="text-danger">วิกฤต</th>
+					<th width="128" class="bd-left text-warning">เฝ้าระวัง</th>
+					<th width="128" class="text-danger">วิกฤต</th>
+				</tr>
+			</thead>
+			<tbody class="sd">
+				<tr ng-repeat="s in cfg.formData"> 
+					<td width="512">{{s.code+' '+s.name}}</td>
+					<td width="128" class="text-center bd-left"><input type="number" ng-model="s.data.rf.value.warning" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" ng-show="s.data.rf.enable" class="form-control input-sm text-center"/></td>
+					<td width="128"><input type="number" ng-model="s.data.rf.value.danger" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" class="form-control input-sm text-center" ng-show="s.data.rf.enable" /></td>
+					<td width="128" class="text-center bd-left"><input type="number" ng-model="s.data.wl_up.value.warning" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" class="form-control input-sm text-center" ng-show="s.data.wl_up.enable" /></td>
+					<td width="128"><input type="number" ng-model="s.data.wl_up.value.danger" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" class="form-control input-sm text-center" ng-show="s.data.wl_up.enable" /></td>
+					<td width="128" class="text-center bd-left"><input type="number" ng-model="s.data.wl_down.value.warning" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" class="form-control input-sm text-center" ng-show="s.data.wl_down.enable" /></td>
+					<td width="128"><input type="number" ng-model="s.data.wl_down.value.danger" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" class="form-control input-sm text-center" ng-show="s.data.wl_down.enable" /></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="tab-control bg-gray sd text-center">
+		<ul class="list-inline">
+			<li><a ng-click="cfg.reset()" class="btn btn-sm btn-link">คืนค่าเริ่มต้น</a></li>
+			<li><a ng-click="cfg.update()" class="btn btn-sm btn-info">บันทึกการเปลี่ยนแปลง</a></li>
+		</ul>
+	</div>
+
+	</form>
+
+</div>

@@ -1,0 +1,77 @@
+<div class="control" ng-hide="stn.hide">
+	<span class="no">{{pop.genrID(pop.selected.code, pop.selected.cctv.length, pop.swap)}}</span>
+	<button type="button" class="btn btn-sm btn-info" ng-click="map.addBasket(pop.selected.code,pop.selected.name)" ng-show="map.genrBTN(pop.selected.code)">เปรียบเทียบ <i class="fa fa-external-link"></i></button>
+	<button type="button" class="btn btn-sm btn-danger" ng-click="map.show=false"><span aria-hidden="true">&times;</span></button>
+</div>
+
+<div class="image">
+	<img ng-src="{{pop.selected.cctv[pop.swap]}}"/>
+	<i class="fa fa-refresh sd-text" ng-click="pop.swap = pop.swap ? 0 : 1" ng-show="pop.selected.cctv.length>1"></i>
+</div>
+
+<div class="detail">
+	<h2 class="text-main">{{pop.selected.name}}</h2>
+	<ul class="list-inline small">
+		<li><i class="fa fa-wifi" ng-class="pop.timeout"></i> เชื่อมต่อ</li>
+		<li><i class="fa" ng-class="pop.door"></i> ตู้คอนโทรล</li>
+		<li><i class="fa fa-clock-o text-success"></i> {{pop.real.date}}</li>
+	</ul>
+</div>
+
+<div class="value">
+	<div ng-show="pop.selected.data.rf.enable">
+		<h6 class="text-fade">ปริมาณฝน (มม.)</h6>
+		<div class="row">
+			<div class="col-xs-3">
+				<img ng-src="{{path.img}}ic_rf.png" class="icon" />
+			</div>
+			<div class="col-xs-4 text-fade">
+				<small>เฝ้าระวัง {{pop.selected.data.rf.value.warning}}</small>
+					<br>
+					<small>เตือนภัย {{pop.selected.data.rf.value.danger}}</small>
+			</div>
+			<div class="col-xs-5 text-right">
+				<span class="h1 text-{{pop.real.rf.status}}">{{pop.real.rf.value}}</span>
+			</div>
+		</div>
+	</div>
+	<div ng-show="pop.selected.data.wl_up.enable">
+		<h6 class="text-fade">ระดับน้ำ (ม.รทก.)</h6>
+		<div class="row">
+			<div class="col-xs-3">
+				<img ng-src="{{path.img}}ic_wl.png" class="icon" />
+			</div>
+			<div class="col-xs-4 text-fade">
+				<small>เฝ้าระวัง {{pop.selected.data.wl_up.value.warning}}</small>
+					<br>
+					<small>เตือนภัย {{pop.selected.data.wl_up.value.danger}}</small>
+			</div>
+			<div class="col-xs-5 text-right">
+				<span class="h1 text-{{pop.real.wl_up.status}}">{{pop.real.wl_up.value}}</span>
+			</div>
+		</div>
+	</div>
+	<div ng-show="pop.selected.data.wl_down.enable">
+		<h6 class="text-fade">ระดับน้ำ-ท้าย (ม.รทก.)</h6>
+		<div class="row">
+			<div class="col-xs-3">
+				<img ng-src="{{path.img}}ic_wl.png" class="icon" />
+			</div>
+			<div class="col-xs-4 text-fade">
+				<small>เฝ้าระวัง {{pop.selected.data.wl_down.value.warning}}</small>
+					<br>
+					<small>เตือนภัย {{pop.selected.data.wl_down.value.danger}}</small>
+			</div>
+			<div class="col-xs-5 text-right">
+				<span class="h1 text-{{pop.real.wl_down.status}}">{{pop.real.wl_down.value}}</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="cross">
+	<div ng-include="pop.selected.section_url"></div>
+	<!--<code>{{pop.selected.section_url}}</code>-->
+</div>
+
+<script>if(location.href.split('#')[1].indexOf('station')===1){$('h4').css("font-size","2em");}</script>

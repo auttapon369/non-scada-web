@@ -1,0 +1,44 @@
+<div class="map row h-100">
+	
+	<div class="area">
+		<ul class="pin">
+			<li class="{{stn.id}}" ng-class="{'active': map.active == stn.code}" ng-repeat="stn in dataSTN">
+				<a ng-click="map.pop(stn.code)">
+					<div class="circle"></div>
+					<i class="fa" ng-class="map.pin(stn.zone, stn.data, stn.code)"></i>
+					<span>{{stn.name}}</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="top-right text-right">
+		<div>
+			<!-- <a ng-click="map.sound()"><i class="fa fa-play sd-text"></i></a> -->
+			<a ng-click="map.mute()"><i class="fa sd-text" ng-class="map.bell"></i></a>
+		</div>
+		<br>
+		<div class="viewer panel panel-default sd" ng-show="map.basket.length">
+			<div class="panel-heading text-left">เปรียบเทียบ {{"( "+map.basket.length+"/"+map.basketMax+" )"}} <a ng-href="#/station/{{map.stack()}}" target="_blank" ng-show="map.basket.length>1" class="pull-right"><i class="fa fa-external-link"></i></a></div>
+			<div class="panel-body">
+				<ul class="list-unstyled">
+					<li ng-repeat="(i,v) in map.basket">- {{v.name}} <a ng-click="map.removeBasket(i)" class="text-danger"><i class="fa fa-close"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="bottom-right">
+		<h6>หมายเหตุ</h6>
+		<ul class="list-unstyled small">
+			<li><i class="fa fa-map-marker text-success sd-success"></i> ประตูระบายน้ำแนวแม่น้ำเจ้าพระยา 15 สถานี</li>
+			<li><i class="fa fa-circle text-success sd-success"></i> ประตูระบายน้ำในตัวเมือง 11 สถานี</li>
+			<li><i class="fa fa-car text-success sd-success"></i> สถานีวัดระดับน้ำฝนผิวจราจร 12 สถานี</li>
+		</ul>
+	</div>
+
+	<div class="side-left bg-gray sd-box" ng-show="map.show">
+		<popup class="popup"></popup>
+	</div>
+
+</div>

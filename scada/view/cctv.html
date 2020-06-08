@@ -1,0 +1,19 @@
+<div class="container-fluid h-100">
+	<div class="row contain-in pad-bottom">
+		<div class="col-sm-3 photo zoom" ng-repeat="(i,c) in dataCCTV | filter:cctv.ft">
+			<a ng-click="cctv.zoom(c.src)"><img ng-src="{{c.src}}" class="img-responsive" /></a>
+			<small class="id">{{c.id+'-'+c.no}}</small>
+			<small class="name">{{c.name}}</small>
+		</div>
+	</div>
+	<div class="tab-control bg-black sd text-center">
+		<ul class="list-inline">
+			<li><a ng-click="cctv.zone('A')" class="btn btn-sub btn-sm" ng-class="{'btn-info':cctv.ft.zone=='A'}">Zone A</a></li>
+			<li><a ng-click="cctv.zone('B')" class="btn btn-sub btn-sm" ng-class="{'btn-info':cctv.ft.zone=='B'}">Zone B</a></li>
+			<li><a ng-click="cctv.zone('C')" class="btn btn-sub btn-sm" ng-class="{'btn-info':cctv.ft.zone=='C'}">Zone C</a></li>
+		</ul>
+	</div>
+	<div class="fullscreen" ng-show="cctv.show">
+		<img ng-src="{{cctv.photo}}" ng-click="cctv.show=false"/>
+	</div>
+</div>

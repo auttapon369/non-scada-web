@@ -1,0 +1,50 @@
+<div class="control" ng-hide="stn.hide">
+	<span class="no">{{pop.no(map.real.code,map.selected.cctv.length,pop.swap)}}</span>
+	<button type="button" class="btn btn-sm btn-info" ng-click="map.addBasket(map.selected.code,map.selected.name)" ng-show="pop.btnComp(map.basket,map.selected.code,map.basketMax)">เปรียบเทียบ <i class="fa fa-external-link"></i></button>
+	<button type="button" class="btn btn-sm btn-danger" ng-click="map.show=false"><span aria-hidden="true">&times;</span></button>
+</div>
+
+<div class="image">
+	<img ng-src="{{map.selected.cctv[pop.swap]}}"/>
+	<i class="fa fa-refresh sd-text" ng-click="pop.swap = pop.swap ? 0 : 1" ng-show="map.selected.cctv.length>1"></i>
+</div>
+
+<div class="detail">
+	<h4 class="text-main">{{map.selected.name}}{{pop.id}}</h4>
+	<ul class="list-inline small">
+		<li><i class="fa fa-wifi" ng-class="pop.check(map.selected.timeout)"></i> เชื่อมต่อ</li>
+		<li><i class="fa" ng-class="pop.check(map.selected.door,'door')"></i> ตู้คอนโทรล</li>
+		<li><i class="fa fa-clock-o text-success"></i> {{map.real.date}}</li>
+	</ul>
+	<!-- <button type="button" class="close" aria-label="Close" ng-click="map.show=false"><span aria-hidden="true">&times;</span></button> -->
+</div>
+
+<div class="value">
+	<div class="" ng-show="map.selected.data.rf.enable">
+		<img ng-src="{{path.img}}ic_rf.png" class="icon" />
+		<h6 class="text-fade">ปริมาณฝน (มม.)</h6>
+		<ul class="list-unstyled small" >
+			<li><span class="h1 text-{{map.real.rf.status}}">{{map.real.rf.value}}</span></li>
+			<li><small class="text-fade">เฝ้าระวัง {{map.selected.data.rf.value.warning}}</small></li>
+			<li><small class="text-fade">เตือนภัย {{map.selected.data.rf.value.danger}}</small></li>
+		</ul>
+	</div>
+	<div class="" ng-show="map.selected.data.wl_up.enable">
+		<img ng-src="{{path.img}}ic_wl.png" class="icon" />
+		<h6 class="text-fade">ระดับน้ำ (ม.รทก.)</h6>
+		<ul class="list-unstyled small" >
+			<li><span class="h1 text-{{map.real.wl_up.status}}">{{map.real.wl_up.value}}</span></li>
+			<li><small class="text-fade">เฝ้าระวัง {{map.selected.data.wl_up.value.warning}}</small></li>
+			<li><small class="text-fade">เตือนภัย {{map.selected.data.wl_up.value.danger}}</small></li>
+		</ul>
+	</div>
+	<div class="" ng-show="map.selected.data.wl_down.enable">
+		<img ng-src="{{path.img}}ic_wl.png" class="icon" />
+		<h6 class="text-fade">ระดับน้ำ-หลัง (ม.รทก.)</h6>
+		<ul class="list-unstyled small" ng-show="map.selected.data.wl_down.enable">
+			<li><span class="h1 text-{{map.real.wl_down.status}}">{{map.real.wl_down.value}}</span></li>
+			<li><small class="text-fade">เฝ้าระวัง {{map.selected.data.wl_down.value.warning}}</small></li>
+			<li><small class="text-fade">เตือนภัย {{map.selected.data.wl_down.value.danger}}</small></li>
+		</ul>
+	</div>
+</div>

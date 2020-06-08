@@ -1,0 +1,17 @@
+<div class="row">
+	<div class="side-left cover bg-gray">
+		<div class="menu-side">
+			<div class="col-sm-6" ng-repeat="s in dataSTN"><a ng-click="trend.view(s.id)" class="btn btn-sm btn-menu" ng-class="{'bg-main text-black':trend.code==s.code}"><small>{{s.code}}</small>{{s.name}}</a></div>
+		</div>
+	</div>
+	<div class="content-right bg-gray">
+		<div class="graph">
+			<h5>ปริมาณน้ำฝน <small>{{trend.code+" "+trend.name}}</small></h5>
+			<div id="graph-rf"></div>
+		</div>
+		<div class="graph">
+			<h5>ระดับน้ำ <small>{{trend.code+" "+trend.name}}</small><a ng-click="trend.click(trend.id)"></a></h5>
+			<div id="graph-wl"></div>
+		</div>
+	</div>
+</div>

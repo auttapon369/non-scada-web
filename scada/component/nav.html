@@ -1,0 +1,17 @@
+<div class="container-fluid">
+	<div class="navbar-header">
+		<a href="#/" class="navbar-brand"><img ng-src="{{path.img}}logo.png" alt="{{text.project}}"> {{text.title.th}}</a>
+	</div>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a><timer class="time" /></a></li>
+		<li>
+			<a ng-click="fullscreen()" title="fullscreen"><i class="fa fa-clone"></i></a>
+		</li>
+		<li>
+			<a ng-click="sound('mute')" title="mute"><i class="fa sd-text" ng-class="bell"></i></a>
+		</li>		
+		<li>
+			<a ng-click="exit()" title="exit"><i class="fa fa-power-off"></i></a>
+		</li>
+	</ul>
+</div>

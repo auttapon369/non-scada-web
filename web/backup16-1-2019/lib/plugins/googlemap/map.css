@@ -1,0 +1,65 @@
+.labels {
+	/*outline: 1px dashed red;*/
+	position: relative;
+	padding: 12px;
+	line-height: 0;
+}
+.labels:hover {
+	z-index: 9999;
+}
+.labels > .icon {
+	position: absolute;
+	top: 4px;
+	left: 4px;
+}
+.icon {
+	/*outline: 1px solid green;*/
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background-image: url('icon.png');
+	background-repeat: no-repeat;
+	line-height: 0;
+	z-index: 1;
+}
+.icon.wl {
+	z-index: 2;
+}
+.icon.rf.success {
+	background-position: 0 0;
+}
+.icon.rf.warning {
+	background-position: 0 -16px;
+}
+.icon.rf.danger {
+	background-position: 0 -32px;
+}
+.icon.rf.black {
+	background-position: 0 -48px;
+}
+.icon.rf.gray {
+	background-position: 0 -64px;
+}
+.icon.rf,
+.icon.rf.white {
+	background-position: 0 -80px;
+}
+.icon.wl.success {
+	background-position: -16px 0;
+}
+.icon.wl.warning {
+	background-position: -16px -16px;
+}
+.icon.wl.danger {
+	background-position: -16px -32px;
+}
+.icon.wl.black {
+	background-position: -16px -48px;
+}
+.icon.wl.gray {
+	background-position: -16px -64px;
+}
+.icon.wl,
+.icon.wl.white {
+	background-position: -16px -80px;
+}
