@@ -179,7 +179,7 @@
 
 <!-- script -->
 <link href="<?php echo PATH_PLUGIN; ?>googlemap/map.css" rel="stylesheet" type="text/css" />
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcDHTZyFY_k-Eol3jy12Ei52vbdva04JY"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=********************"></script>
 <script src="<?php echo PATH_PLUGIN; ?>googlemap/markerwithlabel.js"></script>
 <script src="<?php echo PATH_PLUGIN; ?>googlemap/map.js?v=16.6.13"></script>
 <script src="<?php echo PATH_SCRIPT; ?>jquery/jquery.signalr-1.2.2.min.js"></script>
