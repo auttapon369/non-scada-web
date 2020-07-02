@@ -8,6 +8,6 @@
 </div>
 
 <!-- script -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcDHTZyFY_k-Eol3jy12Ei52vbdva04JY"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=********************"></script>
 <!-- <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;language=th-TH"></script> -->
 <script src="<?php echo PATH_SCRIPT; ?>jquery/map.js?v=1"></script>
